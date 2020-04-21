@@ -1,0 +1,6 @@
+<h1>{{ meeting.date.date }}</h1>
+<ul>
+{% for topic in meeting.topic_set.all %}
+    <li>{{ topic.topic_text }}</li>
+{% endfor %}
+</ul>

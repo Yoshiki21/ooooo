@@ -1,0 +1,9 @@
+{% if Meeting_list %}
+    <ul>
+    {% for meeting in Meeting_list %}
+        <li><a href = "{% url 'ECT:detail' meeting.id %}">{{ meeting.date.date }}</a></li>
+    {% endfor %}       
+    </ul>
+{% else %}
+    <p>No meeting are scheduled.</p>
+{% endif %}
