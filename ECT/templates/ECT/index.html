@@ -1,3 +1,7 @@
+<title>ECT homepage</title>
+<head>English converstion over Zooooom!!</head>
+<body>
+<h1>Meeting list</h1>
 {% if Meeting_list %}
     <ul>
     {% for meeting in Meeting_list %}
@@ -7,3 +11,20 @@
 {% else %}
     <p>No meeting are scheduled.</p>
 {% endif %}
+</body>
+<h1>Mebmbers</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.name}}</td>
+        <td><a href="{% url 'ECT:edit' item.id %}">Edit</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+<p>If you want to register your name</p>
+<li><a href = "{% url 'ECT:create' %}">{{ "please click here "}}</a></li>
